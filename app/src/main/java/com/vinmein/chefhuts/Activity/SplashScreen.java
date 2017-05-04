@@ -32,7 +32,7 @@ public class SplashScreen extends PermissionActivity {
                                 try {
                                     sleep(3 * 1000);
                                     if (processor.getUserId() != null) {
-                                        Intent i1 = new Intent(getApplicationContext(), Dashboard.class);
+                                        Intent i1 = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(i1);
                                     } else if (processor.getUserId() == null) {
                                         Intent i = new Intent(getApplicationContext(), HomeActivity.class);
@@ -66,7 +66,7 @@ public class SplashScreen extends PermissionActivity {
                     try {
                         sleep(3 * 1000);
                         if (processor.getUserId() != null) {
-                            Intent i1 = new Intent(getApplicationContext(), Dashboard.class);
+                            Intent i1 = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(i1);
                         } else if (processor.getUserId() == null) {
                             Intent i = new Intent(getApplicationContext(), HomeActivity.class);
