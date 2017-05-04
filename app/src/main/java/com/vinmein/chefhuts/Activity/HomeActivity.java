@@ -130,7 +130,7 @@ public class HomeActivity extends AppCompatActivity {
                                             if (Tokenvalue != null) {
                                                 onLoginSuccess();
                                                 processor.setUserData(respnseString);
-                                                Intent MainTrans = new Intent(getApplicationContext(), Dashboard.class);
+                                                Intent MainTrans = new Intent(getApplicationContext(), MainActivity.class);
                                                 startActivity(MainTrans);
                                             } else {
                                                 Toast.makeText(getApplicationContext(), "Invalid Login", Toast.LENGTH_SHORT).show();

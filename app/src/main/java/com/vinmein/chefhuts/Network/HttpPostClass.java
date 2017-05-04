@@ -24,7 +24,7 @@ public class HttpPostClass {
 
     public Call PostData(Context mContext, String url, String json, Callback callback) throws IOException {
         Log.i("POST METHOD:",url);
-        prefs = mContext.getSharedPreferences("com.vinmein.dvadivel.foodie", Context.MODE_PRIVATE);
+        prefs = mContext.getSharedPreferences("com.vinmein.chefhuts.Activity", Context.MODE_PRIVATE);
         String token=prefs.getString("token",null);
         if(token != null) {
             Log.i("Profil", token);
@@ -41,7 +41,7 @@ public class HttpPostClass {
     public Call Getdata(Context mContext,String url, Callback callback) throws IOException {
 
         Log.i("GET METHOD:",url);
-        prefs = mContext.getSharedPreferences("com.vinmein.dvadivel.foodie", Context.MODE_PRIVATE);
+        prefs = mContext.getSharedPreferences("com.vinmein.chefhuts.Activity", Context.MODE_PRIVATE);
         String token=prefs.getString("token",null);
         if(token != null) {
             Log.i("Profil", token);

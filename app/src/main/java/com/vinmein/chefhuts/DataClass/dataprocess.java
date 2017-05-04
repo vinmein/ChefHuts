@@ -34,7 +34,7 @@ public class dataprocess {
      * class from instantiating.
      */
     private dataprocess(Context context) {
-        prefs = context.getSharedPreferences("com.vinmein.dvadivel.foodie", Context.MODE_PRIVATE);
+        prefs = context.getSharedPreferences("com.vinmein.chefhuts.Activity", Context.MODE_PRIVATE);
     }
 
 
