@@ -18,6 +18,8 @@ public class dataprocess {
     private static dataprocess instance = null;
     SharedPreferences prefs;
     private ArrayList<Float> graphvalue = new ArrayList<Float>(); ;
+    private String myrestaurant;
+    private String myrestaurantId;
     private String restaurantId;
     private JSONArray Menu;
     private String diningId;
@@ -82,6 +84,12 @@ public class dataprocess {
         return prefs.getString("uName",null);
     }
 
+    public String getmyrestuarant() {
+        return prefs.getString("myrestuarant",null);
+    }
+    public String getmyrestuarantid() {
+        return prefs.getString("myrestuarantid",null);
+    }
     public String getEmail() {
         return prefs.getString("Useremail",null);
     }
@@ -102,6 +110,13 @@ public class dataprocess {
 
     public void setRestaurantId(String restaurantId) {
         prefs.edit().putString("restaurantID",restaurantId).apply();
+    }
+    public void setmyRestaurant(String mmyrestaurant) {
+        prefs.edit().putString("myrestuarant",myrestaurant).apply();
+    }
+
+    public void setmyRestaurantid(String myrestaurantid) {
+        prefs.edit().putString("myrestuarantid",myrestaurantid).apply();
     }
 
     public void setDiningId(String diningId) {

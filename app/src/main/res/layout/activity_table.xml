@@ -10,4 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.vinmein.chefhuts.Activity.Table_Activity">
 
+    <GridView
+        android:id="@+id/tableGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:drawSelectorOnTop="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp" />
 </RelativeLayout>
