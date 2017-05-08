@@ -44,8 +44,6 @@ public class Table_Activity extends Activity {
         prefs = this.getSharedPreferences("com.vinmein.chefhuts.Activity", Context.MODE_PRIVATE);
         gridView = (GridView) findViewById(R.id.tableGrid);
         tabledata = new ArrayList<>();
-        fAdapter=new TableListAdapter(getApplicationContext(),R.layout.tablegrid_layout,tabledata);
-        gridView.setAdapter(fAdapter);
         getTableDetails();
     }
 
@@ -65,11 +63,12 @@ public class Table_Activity extends Activity {
                 public void onResponse(Call call, Response response) throws IOException {
                 if(response.isSuccessful()){
                  final String table_Rsp=response.body().string();
+                    parseresult(table_Rsp);
                     Table_Activity.this.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             Log.i("Tableview_Response",table_Rsp);
-                           parseresult(table_Rsp);
+                            fAdapter=new TableListAdapter(Table_Activity.this,R.layout.tablegrid_layout,tabledata);
                             fAdapter.setData(tabledata);
                             fAdapter.notifyDataSetChanged();
                         }
