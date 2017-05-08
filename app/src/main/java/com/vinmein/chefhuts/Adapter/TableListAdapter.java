@@ -29,16 +29,14 @@ public class TableListAdapter extends ArrayAdapter<Tabledetail> {
     private ArrayList<Tabledetail> data = new ArrayList<Tabledetail>();
     private Context context;
     public List<Integer> selectedPositions;
-    public TableListAdapter(Context mcontext,int layoutResourceId,ArrayList<Tabledetail> griddata) {
-        super(mcontext,layoutResourceId, griddata);
+    public TableListAdapter(Context mcontext,int layoutResourceId,ArrayList<Tabledetail> data) {
+        super(mcontext,layoutResourceId, data);
         this.layoutResourceId=layoutResourceId;
         this.context=mcontext;
-        this.data=griddata;
-
-
+        this.data=data;
     }
 
-    public void setGridData(ArrayList<Tabledetail> mGridData) {
+    public void setData(ArrayList<Tabledetail> mGridData) {
         this.data = mGridData;
         notifyDataSetChanged();
     }
@@ -71,5 +69,38 @@ public class TableListAdapter extends ArrayAdapter<Tabledetail> {
 //        TextView titleTextView;
 //        ImageView imageView;
 //    }
+
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View row = convertView;
+        TableListAdapter.ViewHolder holder = null;
+
+        if (row == null) {
+            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
+            row = inflater.inflate(layoutResourceId, parent, false);
+            holder = new TableListAdapter.ViewHolder();
+            holder.TableNo = (TextView) row.findViewById(R.id.Tblenumber);
+            holder.Tablesession = (TextView) row.findViewById(R.id.Tablesession);
+
+            row.setTag(holder);
+        } else {
+            holder = (TableListAdapter.ViewHolder) row.getTag();
+        }
+
+        Tabledetail item = data.get(position);
+        String number = item.getTableno();
+        holder.TableNo.setText(number);
+        String Sessioncnt = item.getSeatingcnt();
+        holder.Tablesession.setText(Sessioncnt);
+
+        return row;
+    }
+
+
+    static class ViewHolder {
+        TextView TableNo;
+        TextView Tablesession;
+    }
     }
 
