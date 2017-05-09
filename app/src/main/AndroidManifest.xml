@@ -47,7 +47,8 @@
             android:launchMode="singleInstance"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activity.Table_Activity" />
-        <activity android:name=".Activity.FoodCategory"></activity>
+        <activity android:name=".Activity.FoodCategory" />
+        <activity android:name=".Activity.FoodActivity"></activity>
     </application>
 
 </manifest>
