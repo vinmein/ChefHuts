@@ -2,10 +2,14 @@ package com.vinmein.chefhuts.Activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -22,13 +26,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class Table_Activity extends Activity {
+public class Table_Activity extends Activity  {
     GridView gridView;
     EditText friend;
     Button search;
@@ -47,6 +52,16 @@ public class Table_Activity extends Activity {
 
         fAdapter=new TableListAdapter(Table_Activity.this,R.layout.tablegrid_layout,tabledata);
         gridView.setAdapter(fAdapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Tabledetail item=(Tabledetail)parent.getItemAtPosition(position);
+                Log.i("Gridposition", String.valueOf(fAdapter.getItemId(position)));
+                Intent FoodIntent=new Intent(getApplicationContext(),FoodCategory.class);
+                FoodIntent.putExtra("bundle",item);
+                startActivity(FoodIntent);
+            }
+        });
         getTableDetails();
     }
 
@@ -87,6 +102,7 @@ public class Table_Activity extends Activity {
         try {
             JSONObject jobj1=new JSONObject(table_rsp);
             JSONArray jarray1=jobj1.getJSONArray("dinings");
+            String TableCount= String.valueOf(jarray1.length());
             for(int i=0;i<jarray1.length();i++)
             {
                 JSONObject dining_value=jarray1.getJSONObject(i);
@@ -98,7 +114,7 @@ public class Table_Activity extends Activity {
                 String table_seating=dining_table.getString("seatingCount");
                 String table_place=dining_table.getString("Location");
 
-                Tabledetail td=new Tabledetail(table_id,table_name,table_number,table_seating,table_place);
+                Tabledetail td=new Tabledetail(table_id,table_name,table_number,table_seating,table_place,TableCount);
                 tabledata.add(td);
             }
         } catch (JSONException e) {
