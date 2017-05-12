@@ -57,7 +57,7 @@ public class Table_Activity extends Activity  {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Tabledetail item=(Tabledetail)parent.getItemAtPosition(position);
                 Log.i("Gridposition", String.valueOf(fAdapter.getItemId(position)));
-                Intent FoodIntent=new Intent(getApplicationContext(),FoodActivity.class);
+                Intent FoodIntent=new Intent(getApplicationContext(),EuclidActivity.class);
                 FoodIntent.putExtra("bundle",item);
                 startActivity(FoodIntent);
             }

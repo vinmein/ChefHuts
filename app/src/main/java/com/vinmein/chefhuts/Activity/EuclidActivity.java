@@ -1,13 +1,16 @@
-package com.vinmein.chefhuts.Euclid;
+package com.vinmein.chefhuts.Activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.RectF;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -26,14 +29,27 @@ import android.widget.TextView;
 import com.nhaarman.listviewanimations.appearance.ViewAnimator;
 import com.nhaarman.listviewanimations.appearance.simple.SwingLeftInAnimationAdapter;
 import com.squareup.picasso.Picasso;
-import com.yalantis.euclid.library.R;
+import com.vinmein.chefhuts.DataClass.dataprocess;
+import com.vinmein.chefhuts.Euclid.EuclidListAdapter;
+import com.vinmein.chefhuts.Euclid.EuclidState;
+import com.vinmein.chefhuts.Network.HttpPostClass;
+import com.vinmein.chefhuts.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import io.codetail.animation.SupportAnimator;
 import io.codetail.animation.ViewAnimationUtils;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * Created by Oleksii Shliama on 1/27/15.
@@ -47,7 +63,8 @@ public class EuclidActivity extends Activity {
     private static final int ANIMATION_DURATION_CLOSE_PROFILE_DETAILS = 500;
     private static final int ANIMATION_DURATION_SHOW_PROFILE_BUTTON = 300;
     private static final int CIRCLE_RADIUS_DP = 50;
-
+    dataprocess processor;
+    SharedPreferences prefs;
     protected RelativeLayout mWrapper;
     protected ListView mListView;
     protected FrameLayout mToolbar;
@@ -58,8 +75,8 @@ public class EuclidActivity extends Activity {
     protected View mButtonProfile;
 
     public static ShapeDrawable sOverlayShape;
-    static int sScreenWidth;
-    static int sProfileImageHeight;
+    public static int sScreenWidth;
+    public static int sProfileImageHeight;
 
     private SwingLeftInAnimationAdapter mListViewAnimationAdapter;
     private ViewAnimator mListViewAnimator;
@@ -72,11 +89,20 @@ public class EuclidActivity extends Activity {
     private AnimatorSet mOpenProfileAnimatorSet;
     private AnimatorSet mCloseProfileAnimatorSet;
     private Animation mProfileButtonShowAnimation;
-
+    Map<String,Object>profileMap;
+    ArrayList<String>Catalogname;
+    ArrayList<String>Catalogimg;
+    String[]Catalognme;
+    String[]Catalogimg_src ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_euclid);
+        processor = dataprocess.getInstance(this);
+        prefs = this.getSharedPreferences("com.vinmein.chefhuts.Activity", Context.MODE_PRIVATE);
+        Catalogname=new ArrayList<>();
+        Catalogimg=new ArrayList<>();
+        String Hotel_id=processor.getmyrestuarantid();
 
         mWrapper = (RelativeLayout) findViewById(R.id.wrapper);
         mListView = (ListView) findViewById(R.id.list_view);
@@ -102,8 +128,51 @@ public class EuclidActivity extends Activity {
         sScreenWidth = getResources().getDisplayMetrics().widthPixels;
         sProfileImageHeight = getResources().getDimensionPixelSize(R.dimen.height_profile_image);
         sOverlayShape = buildAvatarCircleOverlay();
-
+        getFoodCategory(Hotel_id);
         initList();
+    }
+
+    private void getFoodCategory(String hotel_id) {
+        String url=processor.gethost()+"/api/restaurants/"+hotel_id+"/card";
+        HttpPostClass getcatalog=new HttpPostClass();
+        try {
+            getcatalog.Getdata(getApplicationContext(), url, new Callback() {
+                @Override
+                public void onFailure(Call call, IOException e) {
+                    e.printStackTrace();
+                }
+
+                @Override
+                public void onResponse(Call call, Response response) throws IOException {
+                  if(response.isSuccessful()){
+                      final String Menu_Category=response.body().string();
+                      EuclidActivity.this.runOnUiThread(new Runnable() {
+                          @Override
+                          public void run() {
+                              Log.i("MenuCategory",Menu_Category);
+                              try {
+                                  JSONArray jarray1=new JSONArray(Menu_Category);
+                                  for(int i=0;i<jarray1.length();i++){
+                                      JSONObject catrgy_list=jarray1.getJSONObject(i);
+                                      JSONObject catgy_name=catrgy_list.getJSONObject("category");
+                                      String Category_Title=catgy_name.getString("category");
+                                      JSONObject catgy_img=catgy_name.getJSONObject("image");
+                                      String Category_Image=catgy_img.getString("landscape");
+                                      Catalogname.add(Category_Title);
+                                      Catalogimg.add(Category_Image);
+                                  }
+                              } catch (JSONException e) {
+                                  e.printStackTrace();
+                              }
+                              Log.i("Categoryimg",Catalogimg.get(0));
+                          }
+                      });
+                  }
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initList() {
@@ -493,7 +562,16 @@ public class EuclidActivity extends Activity {
      * @return - adapter with data. Check {@link EuclidListAdapter}
      */
     protected BaseAdapter getAdapter(){
-
+        List<Map<String, Object>> profilesList = new ArrayList<>();
+        for(int j=0;j<Catalogimg.size();j++){
+            profileMap=new HashMap<>();
+            profileMap.put(EuclidListAdapter.KEY_AVATAR, Catalogimg.get(j));
+            profileMap.put(EuclidListAdapter.KEY_NAME,Catalogname.get(j));
+            profileMap.put(EuclidListAdapter.KEY_DESCRIPTION_SHORT,getString(R.string.lorem_ipsum_short));
+            profileMap.put(EuclidListAdapter.KEY_DESCRIPTION_FULL,getString(R.string.lorem_ipsum_long));
+            profilesList.add(profileMap);
+        }
+        return new EuclidListAdapter(this,R.layout.list_item,profilesList);
     }
 
     /**
