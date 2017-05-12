@@ -1,4 +1,4 @@
-package com.yalantis.euclid.library;
+package com.vinmein.chefhuts.Euclid;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -10,7 +10,6 @@ import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -27,6 +26,7 @@ import android.widget.TextView;
 import com.nhaarman.listviewanimations.appearance.ViewAnimator;
 import com.nhaarman.listviewanimations.appearance.simple.SwingLeftInAnimationAdapter;
 import com.squareup.picasso.Picasso;
+import com.yalantis.euclid.library.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +38,7 @@ import io.codetail.animation.ViewAnimationUtils;
 /**
  * Created by Oleksii Shliama on 1/27/15.
  */
-public abstract class EuclidActivity extends Activity {
+public class EuclidActivity extends Activity {
 
     private static final int REVEAL_ANIMATION_DURATION = 1000;
     private static final int MAX_DELAY_SHOW_DETAILS_ANIMATION = 500;
@@ -490,14 +490,16 @@ public abstract class EuclidActivity extends Activity {
     /**
      * To use EuclidActivity class, at least this method must be implemented, with your own data.
      *
-     * @return - adapter with data. Check {@link com.yalantis.euclid.library.EuclidListAdapter}
+     * @return - adapter with data. Check {@link EuclidListAdapter}
      */
-    protected abstract BaseAdapter getAdapter();
+    protected BaseAdapter getAdapter(){
+
+    }
 
     /**
      * Returns current profile details state.
      *
-     * @return - {@link com.yalantis.euclid.library.EuclidState}
+     * @return - {@link EuclidState}
      */
     public EuclidState getState() {
         return mState;

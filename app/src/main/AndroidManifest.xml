@@ -48,6 +48,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activity.Table_Activity" />
         <activity android:name=".Activity.FoodActivity"></activity>
+        <activity android:name=".Euclid.EuclidActivity"></activity>
     </application>
 
 </manifest>
