@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-port/values-port.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/values-port/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 276,
+                        "endColumn": 55,
+                        "endOffset": 327
+                    }
+                }
+            }
+        ]
+    }
+]

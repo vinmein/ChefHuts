@@ -1,0 +1,106 @@
+[
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/list_item.xml",
+        "source": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/bundles/debug/res/layout/list_item.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/activity_euclid.xml",
+        "source": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/bundles/debug/res/layout/activity_euclid.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_simple_dropdown_hint.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_simple_dropdown_hint.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_search_view.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/overlay_list_item.xml",
+        "source": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/bundles/debug/res/layout/overlay_list_item.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/button_round_msg.xml",
+        "source": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/bundles/debug/res/layout/button_round_msg.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/res/merged/androidTest/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/layout/abc_list_menu_item_layout.xml"
+    }
+]

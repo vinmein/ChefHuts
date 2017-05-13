@@ -1,6 +1,7 @@
 package com.vinmein.chefhuts.Euclid;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,11 +50,10 @@ public class EuclidListAdapter extends ArrayAdapter<Map<String, Object>> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        Picasso.with(getContext()).load((Integer) mData.get(position).get(KEY_AVATAR))
-                .resize(EuclidActivity.sScreenWidth, EuclidActivity.sProfileImageHeight).centerCrop()
+      String url = (String) mData.get(position).get(KEY_AVATAR);
+        Picasso.with(getContext()).load(url).resize(EuclidActivity.sScreenWidth, EuclidActivity.sProfileImageHeight).centerCrop()
                 .placeholder(R.color.blue)
                 .into(viewHolder.mListItemAvatar);
-
         viewHolder.mListItemName.setText(mData.get(position).get(KEY_NAME).toString().toUpperCase());
         viewHolder.mListItemDescription.setText((String) mData.get(position).get(KEY_DESCRIPTION_SHORT));
         viewHolder.mViewOverlay.setBackground(EuclidActivity.sOverlayShape);

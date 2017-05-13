@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w720dp-v13/values-w720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 76,
+                    "endOffset": 127
+                },
+                "from": {
+                    "file": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/values-w720dp-v13/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 278,
+                        "endColumn": 76,
+                        "endOffset": 350
+                    }
+                }
+            }
+        ]
+    }
+]

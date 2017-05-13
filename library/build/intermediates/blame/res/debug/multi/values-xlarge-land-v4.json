@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Volumes/backup/foodie Project/ChefHuts/library/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-land-v4/values-xlarge-land-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 63,
+                    "endOffset": 114
+                },
+                "from": {
+                    "file": "/Users/work/.android/build-cache/d031c6945c87ea15f663adb273b7d6dd8e9e3186/output/res/values-xlarge-land-v4/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 284,
+                        "endColumn": 63,
+                        "endOffset": 343
+                    }
+                }
+            }
+        ]
+    }
+]

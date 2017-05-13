@@ -129,7 +129,7 @@ public class EuclidActivity extends Activity {
         sProfileImageHeight = getResources().getDimensionPixelSize(R.dimen.height_profile_image);
         sOverlayShape = buildAvatarCircleOverlay();
         getFoodCategory(Hotel_id);
-        initList();
+
     }
 
     private void getFoodCategory(String hotel_id) {
@@ -160,7 +160,9 @@ public class EuclidActivity extends Activity {
                                       String Category_Image=catgy_img.getString("landscape");
                                       Catalogname.add(Category_Title);
                                       Catalogimg.add(Category_Image);
+
                                   }
+                                  initList();
                               } catch (JSONException e) {
                                   e.printStackTrace();
                               }
@@ -226,11 +228,12 @@ public class EuclidActivity extends Activity {
 
         mOverlayListItemView.findViewById(R.id.view_avatar_overlay).setBackground(sOverlayShape);
 
-        Picasso.with(EuclidActivity.this).load((Integer) item.get(EuclidListAdapter.KEY_AVATAR))
+        String url = (String) item.get(EuclidListAdapter.KEY_AVATAR);
+        Picasso.with(EuclidActivity.this).load(url)
                 .resize(sScreenWidth, sProfileImageHeight).centerCrop()
                 .placeholder(R.color.blue)
                 .into((ImageView) mOverlayListItemView.findViewById(R.id.image_view_reveal_avatar));
-        Picasso.with(EuclidActivity.this).load((Integer) item.get(EuclidListAdapter.KEY_AVATAR))
+        Picasso.with(EuclidActivity.this).load(url)
                 .resize(sScreenWidth, sProfileImageHeight).centerCrop()
                 .placeholder(R.color.blue)
                 .into((ImageView) mOverlayListItemView.findViewById(R.id.image_view_avatar));
@@ -563,6 +566,7 @@ public class EuclidActivity extends Activity {
      */
     protected BaseAdapter getAdapter(){
         List<Map<String, Object>> profilesList = new ArrayList<>();
+        Log.i("img", String.valueOf(Catalogimg));
         for(int j=0;j<Catalogimg.size();j++){
             profileMap=new HashMap<>();
             profileMap.put(EuclidListAdapter.KEY_AVATAR, Catalogimg.get(j));
